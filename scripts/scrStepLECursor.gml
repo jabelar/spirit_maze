@@ -2,7 +2,7 @@
 
 x = (mouse_x div 256) * 256
 y = (mouse_y div 256) * 256
-if mouse_check_button_pressed(mb_left)
+if mouse_check_button(mb_left)
 {
     var inst_id = instance_position(x, y, objLEParentMenu) ;
     if inst_id > 0 // pick up sprite from menu
