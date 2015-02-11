@@ -10,4 +10,3 @@ switch room
     case roomRace: scrStepRoomRace(); scrCheckBroadcastAlarm(); break;
     case roomGame: scrStepGame(); scrCheckBroadcastAlarm(); break;
 }
-

@@ -27,6 +27,9 @@
     <sprites name="Background">
       <sprite>sprites\sprBlockStone1</sprite>
     </sprites>
+    <sprites name="Buttons">
+      <sprite>sprites\sprite11</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -60,6 +63,7 @@
         <script>scripts\scrDrawSettings.gml</script>
       </scripts>
       <script>scripts\scrControllerEscape.gml</script>
+      <script>scripts\scrKeypressR.gml</script>
     </scripts>
     <scripts name="Utilities">
       <script>scripts\scrNextOpenPlayerID.gml</script>

@@ -7,9 +7,9 @@ draw_set_valign(fa_top)
 // draw grid
 for(var i=1; i<(room_width div 256); i++)
 {
-    draw_line_width(i*256, 0, i*256, room_height, 3)
+    draw_line_width(i*256, 0, i*256, room_height, 6)
 }
 for(var i=1; i<(room_height div 256); i++)
 {
-    draw_line_width(0, i*256, room_width, i*256, 3)
+    draw_line_width(0, i*256, room_width, i*256, 6)
 }
