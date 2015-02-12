@@ -8,8 +8,10 @@ if mouse_check_button_pressed(mb_left) and sprite_index == sprPlayer
     // can only have one player object per level
     with objLEPlayer
     {
+        ds_stack_push(other.undo_stack, -1, object_index, x, y)
         instance_destroy()
     }
+    ds_stack_push(undo_stack, 1, objLEPlayer, x, y)
     instance_create(x, y, objLEPlayer)
 }
 if mouse_check_button(mb_left)
@@ -31,24 +33,28 @@ if mouse_check_button(mb_left)
             {
                 scrLEDestroyObstaclesAndBackground()
                 scrLEDestroyEntitiesAndObstacles()
+                ds_stack_push(undo_stack, 1, objLEBlockStone0, x, y)
                 instance_create(x, y, objLEBlockStone0)
                 break;
             }
             case sprBlockStone1:
             {
                 scrLEDestroyObstaclesAndBackground()
+                ds_stack_push(undo_stack, 1, objLEBlockStone1, x, y)
                 instance_create(x, y, objLEBlockStone1)
                 break;
             }
             case sprWindow0:
             {
                 scrLEDestroyObstaclesAndBackground()
+                ds_stack_push(undo_stack, 1, objLEWindow0, x, y)
                 instance_create(x, y, objLEWindow0)
                 break;
             }
             case sprEnemy0:
             {
                 scrLEDestroyEntitiesAndObstacles() 
+                ds_stack_push(undo_stack, 1, objLEEnemy0, x, y)
                 instance_create(x, y, objLEEnemy0)
                 break;
             }
@@ -62,6 +68,7 @@ if mouse_check_button_pressed(mb_right)
     {
         with inst_id
         {
+            ds_stack_push(other.undo_stack, -1, object_index, x, y)
             instance_destroy()
         }
     }
@@ -72,6 +79,7 @@ if mouse_check_button_pressed(mb_right)
         {
             with inst_id
             {
+                ds_stack_push(other.undo_stack, -1, object_index, x, y)
                 instance_destroy()
             }
         }
@@ -82,6 +90,7 @@ if mouse_check_button_pressed(mb_right)
             {
                 with inst_id
                 {
+                    ds_stack_push(other.undo_stack, -1, object_index, x, y)
                     instance_destroy()
                 }
             }

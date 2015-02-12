@@ -4,6 +4,7 @@ if inst_id > 0
 {
     with inst_id
     {
+        ds_stack_push(other.undo_stack, -1, object_index, x, y)
         instance_destroy()
     }
 }
@@ -12,6 +13,7 @@ if inst_id > 0
 {
     with inst_id
     {
+        ds_stack_push(other.undo_stack, -1, object_index, x, y)
         instance_destroy()
     }
 }
