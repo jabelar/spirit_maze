@@ -59,4 +59,3 @@ with objBullet
         scrDestroyObject(id)
     }     
 }    
-

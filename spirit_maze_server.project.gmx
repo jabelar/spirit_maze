@@ -63,6 +63,7 @@
         <script>scripts\scrDrawSettings.gml</script>
       </scripts>
       <script>scripts\scrControllerEscape.gml</script>
+      <script>scripts\scrKeypressC.gml</script>
       <script>scripts\scrKeypressR.gml</script>
     </scripts>
     <scripts name="Utilities">

@@ -2,6 +2,16 @@
 
 x = (mouse_x div 256) * 256
 y = (mouse_y div 256) * 256
+if mouse_check_button_pressed(mb_left) and sprite_index == sprPlayer
+{
+    scrLEDestroyEntitiesAndObstacles()
+    // can only have one player object per level
+    with objLEPlayer
+    {
+        instance_destroy()
+    }
+    instance_create(x, y, objLEPlayer)
+}
 if mouse_check_button(mb_left)
 {
     var inst_id = instance_position(x, y, objLEParentMenu) ;
@@ -15,13 +25,6 @@ if mouse_check_button(mb_left)
         {
             case sprPlayer: 
             {
-                scrLEDestroyEntitiesAndObstacles()
-                // can only have one player object per level
-                with objLEPlayer
-                {
-                    instance_destroy()
-                }
-                instance_create(x, y, objLEPlayer)
                 break;
             }
             case sprBlockStone0:

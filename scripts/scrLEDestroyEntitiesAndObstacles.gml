@@ -15,4 +15,3 @@ if inst_id > 0
         instance_destroy()
     }
 }
-
