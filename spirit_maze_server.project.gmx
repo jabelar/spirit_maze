@@ -63,13 +63,16 @@
         <script>scripts\scrDrawSettings.gml</script>
       </scripts>
       <script>scripts\scrControllerEscape.gml</script>
-      <script>scripts\scrKeypressC.gml</script>
-      <script>scripts\scrLECopyLayer.gml</script>
-      <script>scripts\scrLEUndo.gml</script>
-      <script>scripts\scrLERedo.gml</script>
-      <script>scripts\scrSaveLevel.gml</script>
-      <script>scripts\scrLoadLevel.gml</script>
-      <script>scripts\scrKeypressR.gml</script>
+      <scripts name="Key Press">
+        <script>scripts\scrLEClear.gml</script>
+        <script>scripts\scrLESwitchLayer.gml</script>
+        <script>scripts\scrLELoadLevel.gml</script>
+        <script>scripts\scrLERedo.gml</script>
+        <script>scripts\scrLEUndo.gml</script>
+        <script>scripts\scrLECopyLayer.gml</script>
+        <script>scripts\scrLESaveLevel.gml</script>
+        <script>scripts\scrLEProcessKeys.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Utilities">
       <script>scripts\scrNextOpenPlayerID.gml</script>

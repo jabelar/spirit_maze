@@ -1,5 +1,7 @@
 /// scrStepLECursor()
 
+scrLEProcessKeys()
+
 x = (mouse_x div 256) * 256
 y = (mouse_y div 256) * 256
 
