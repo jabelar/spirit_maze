@@ -41,7 +41,6 @@
       </scripts>
       <script>scripts\scrControllerRoomStartEvent.gml</script>
       <script>scripts\scrNetworkingEvent.gml</script>
-      <script>scripts\scrControllerBackspace.gml</script>
       <scripts name="Step Event">
         <script>scripts\scrControllerStepEvent.gml</script>
         <script>scripts\scrStepRoomPlay.gml</script>
@@ -72,6 +71,11 @@
         <script>scripts\scrLECopyLayer.gml</script>
         <script>scripts\scrLESaveLevel.gml</script>
         <script>scripts\scrLEProcessKeys.gml</script>
+        <script>scripts\scrLESetLevelName.gml</script>
+        <script>scripts\scrControllerBackspace.gml</script>
+      </scripts>
+      <scripts name="Dialog Event">
+        <script>scripts\scrLEDialog.gml</script>
       </scripts>
     </scripts>
     <scripts name="Utilities">

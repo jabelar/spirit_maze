@@ -8,7 +8,7 @@ with objLEParent
 }
 
 ini_open("Level.ini");
-ini_write_string("Level", "0", ds_queue_write(level_queue))
+ini_write_string(level_name, "0", ds_queue_write(level_queue))
 ini_close();
 
 show_debug_message("Saving level")

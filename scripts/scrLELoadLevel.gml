@@ -3,7 +3,7 @@
 var level_queue = ds_queue_create()
 
 ini_open("Level.ini")
-var ini_string = ini_read_string("Level", "0", "")
+var ini_string = ini_read_string(level_name, "0", "")
 ini_close()
 
 if ini_string == ""
@@ -22,6 +22,9 @@ else
     if queue_size > 0
     {
         show_debug_message("Level queue size = "+string(queue_size))
+
+        scrLEClear()
+        
         for (var i=1; i < queue_size; i++)
         {
             obj_id = ds_queue_dequeue(level_queue)
