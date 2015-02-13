@@ -66,6 +66,7 @@
       <scripts name="Key Press">
         <script>scripts\scrLEClear.gml</script>
         <script>scripts\scrLESwitchLayer.gml</script>
+        <script>scripts\scrLELevelList.gml</script>
         <script>scripts\scrLELoadLevel.gml</script>
         <script>scripts\scrLERedo.gml</script>
         <script>scripts\scrLEUndo.gml</script>

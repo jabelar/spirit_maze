@@ -1,4 +1,4 @@
-/// scrSaveLevel()
+/// scrLoadLevel()
 
 var level_queue = ds_queue_create()
 
