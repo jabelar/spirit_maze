@@ -22,10 +22,3 @@ draw_set_valign(fa_top)
 var layer = view_xview[view_current]/view_wview[view_current]+1
 draw_text(view_xview[view_current]+view_wview[view_current]/2, 10, objLECursor.level_name+", LAYER "+string(layer))
 
-if objLECursor.waiting_for_name
-{
-    draw_set_color(c_black)
-    draw_rectangle(view_xview[0], 0, view_xview[0]+room_width/2, room_height, false)
-    draw_set_color(c_yellow)
-    draw_text(view_xview[0]+room_width/4, view_yview[0]+room_height/2, string_upper(keyboard_string))
-}

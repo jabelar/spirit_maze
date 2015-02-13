@@ -60,6 +60,7 @@
         <script>scripts\scrDrawLevelEditor.gml</script>
         <script>scripts\scrDrawFriends.gml</script>
         <script>scripts\scrDrawSettings.gml</script>
+        <script>scripts\scrLECursorDrawEvent.gml</script>
       </scripts>
       <script>scripts\scrControllerEscape.gml</script>
       <scripts name="Key Press">

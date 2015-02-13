@@ -10,3 +10,5 @@ switch room
     case roomRace: scrStepRoomRace(); scrCheckBroadcastAlarm(); break;
     case roomGame: scrStepGame(); scrCheckBroadcastAlarm(); break;
 }
+
+if keyboard_check_direct(vk_escape) then game_end()
