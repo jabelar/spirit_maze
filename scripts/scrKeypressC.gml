@@ -14,9 +14,10 @@ if layer == 0
         for (var j=1; j<tiles_h; j++)
         {
             inst_id = instance_position(i*256, j*256, objLEParent)
-            with inst_id
+            if inst_id > 0
             {
-                instance_destroy()
+                ds_stack_push(undo_stack, -1, inst_id)
+                instance_deactivate_object(inst_id)
             }
         }
     }

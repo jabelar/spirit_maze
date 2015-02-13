@@ -65,6 +65,8 @@
       <script>scripts\scrControllerEscape.gml</script>
       <script>scripts\scrKeypressC.gml</script>
       <script>scripts\scrLEUndo.gml</script>
+      <script>scripts\scrSaveLevel.gml</script>
+      <script>scripts\scrLoadLevel.gml</script>
       <script>scripts\scrKeypressR.gml</script>
     </scripts>
     <scripts name="Utilities">

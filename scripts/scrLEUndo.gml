@@ -14,12 +14,30 @@ if not ds_stack_empty(undo_stack)
         {
             show_debug_message("Recreating object with id = "+string(inst_id))
             instance_activate_object(inst_id)
+            // switch view to where the undo action occured
+            if inst_id.x > room_width/2
+            {
+                view_xview[0] = room_width/2
+            }
+            else
+            {
+                view_xview[0] = 0
+            }
             break;
         }
         case 1: // added so delete
         {
             show_debug_message("Deleting object with id = "+string(inst_id))
             instance_deactivate_object(inst_id)
+            // switch view to where the undo action occured
+            if inst_id.x > room_width/2
+            {
+                view_xview[0] = room_width/2
+            }
+            else
+            {
+                view_xview[0] = 0
+            }
             break;
         }
     }

@@ -5,7 +5,7 @@ y = (mouse_y div 256) * 256
 
 var inst_id = -1 ;
 
-if mouse_check_button_pressed(mb_left) and sprite_index == sprPlayer
+if mouse_check_button_pressed(mb_left) and sprite_index == sprPlayer and y >= 256
 {
     scrLEDestroyEntitiesAndObstacles()
     // can only have one player object per level
@@ -26,56 +26,59 @@ if mouse_check_button(mb_left)
     }
     else
     {
-        switch sprite_index
+        if y >=256 // don't place in top menu bar
         {
-            case sprPlayer: 
+            switch sprite_index
             {
-                break;
-            }
-            case sprBlockStone0:
-            {
-                inst_id = instance_position(x, y, objLEBlockStone0)
-                if inst_id < 0 // none already placed there
+                case sprPlayer: 
                 {
-                    scrLEDestroyObstaclesAndBackground()
-                    scrLEDestroyEntitiesAndObstacles()
-                    inst_id = instance_create(x, y, objLEBlockStone0)
-                    ds_stack_push(undo_stack, 1, inst_id)
+                    break;
                 }
-                break;
-            }
-            case sprBlockStone1:
-            {
-                inst_id = instance_position(x, y, objLEBlockStone1)
-                if inst_id < 0 // none already placed there
+                case sprBlockStone0:
                 {
-                    scrLEDestroyObstaclesAndBackground()
-                    inst_id = instance_create(x, y, objLEBlockStone1)
-                    ds_stack_push(undo_stack, 1, inst_id)
+                    inst_id = instance_position(x, y, objLEBlockStone0)
+                    if inst_id < 0 // none already placed there
+                    {
+                        scrLEDestroyObstaclesAndBackground()
+                        scrLEDestroyEntitiesAndObstacles()
+                        inst_id = instance_create(x, y, objLEBlockStone0)
+                        ds_stack_push(undo_stack, 1, inst_id)
+                    }
+                    break;
                 }
-                break;
-            }
-            case sprWindow0:
-            {
-                inst_id = instance_position(x, y, objLEWindow0)
-                if inst_id < 0 // none already placed there
+                case sprBlockStone1:
                 {
-                    scrLEDestroyObstaclesAndBackground()
-                    inst_id = instance_create(x, y, objLEWindow0)
-                    ds_stack_push(undo_stack, 1, inst_id)
+                    inst_id = instance_position(x, y, objLEBlockStone1)
+                    if inst_id < 0 // none already placed there
+                    {
+                        scrLEDestroyObstaclesAndBackground()
+                        inst_id = instance_create(x, y, objLEBlockStone1)
+                        ds_stack_push(undo_stack, 1, inst_id)
+                    }
+                    break;
                 }
-                break;
-            }
-            case sprEnemy0:
-            {
-                inst_id = instance_position(x, y, objLEEnemy0)
-                if inst_id < 0 // none already placed there
+                case sprWindow0:
                 {
-                    scrLEDestroyEntitiesAndObstacles() 
-                    inst_id = instance_create(x, y, objLEEnemy0)
-                    ds_stack_push(undo_stack, 1, inst_id)
+                    inst_id = instance_position(x, y, objLEWindow0)
+                    if inst_id < 0 // none already placed there
+                    {
+                        scrLEDestroyObstaclesAndBackground()
+                        inst_id = instance_create(x, y, objLEWindow0)
+                        ds_stack_push(undo_stack, 1, inst_id)
+                    }
+                    break;
                 }
-                break;
+                case sprEnemy0:
+                {
+                    inst_id = instance_position(x, y, objLEEnemy0)
+                    if inst_id < 0 // none already placed there
+                    {
+                        scrLEDestroyEntitiesAndObstacles() 
+                        inst_id = instance_create(x, y, objLEEnemy0)
+                        ds_stack_push(undo_stack, 1, inst_id)
+                    }
+                    break;
+                }
             }
         }
     }
