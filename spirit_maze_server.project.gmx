@@ -66,6 +66,7 @@
       <script>scripts\scrKeypressC.gml</script>
       <script>scripts\scrLECopyLayer.gml</script>
       <script>scripts\scrLEUndo.gml</script>
+      <script>scripts\scrLERedo.gml</script>
       <script>scripts\scrSaveLevel.gml</script>
       <script>scripts\scrLoadLevel.gml</script>
       <script>scripts\scrKeypressR.gml</script>

@@ -1,19 +1,19 @@
-/// scrLEUndo()
+/// scrLERedo()
 
-show_debug_message("scrLEUndo with stack size = "+string(ds_stack_size(undo_stack)))
+show_debug_message("scrLERedo with stack size = "+string(ds_stack_size(redo_stack)))
 
-if not ds_stack_empty(undo_stack)
+if not ds_stack_empty(redo_stack)
 {
-    show_debug_message("Undo stack has actions")
+    show_debug_message("Redo stack has actions")
     
-    var inst_id = ds_stack_pop(undo_stack)
-    var action_type = ds_stack_pop(undo_stack)
+    var inst_id = ds_stack_pop(redo_stack)
+    var action_type = ds_stack_pop(redo_stack)
     
-    ds_stack_push(redo_stack, action_type, inst_id)
+    ds_stack_push(undo_stack, action_type, inst_id)
     
     switch action_type
     {
-        case -1: // deleted so re-create
+        case 1: // re-create
         {
             show_debug_message("Recreating object with id = "+string(inst_id))
             instance_activate_object(inst_id)
@@ -28,7 +28,7 @@ if not ds_stack_empty(undo_stack)
             }
             break;
         }
-        case 1: // added so delete
+        case -1: // delete
         {
             show_debug_message("Deleting object with id = "+string(inst_id))
             instance_deactivate_object(inst_id)
