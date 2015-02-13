@@ -6,23 +6,20 @@ if not ds_stack_empty(undo_stack)
 {
     show_debug_message("Undo stack has actions")
     
+    var inst_id = ds_stack_pop(undo_stack)
     var action_type = ds_stack_pop(undo_stack)
-    var object_type = ds_stack_pop(undo_stack)
-    var inst_x = ds_stack_pop(undo_stack)
-    var inst_y = ds_stack_pop(undo_stack)
     switch action_type
     {
         case -1: // deleted so re-create
         {
+            show_debug_message("Recreating object with id = "+string(inst_id))
+            instance_activate_object(inst_id)
             break;
         }
         case 1: // added so delete
         {
-            var inst_id = instance_position(inst_x, inst_y, object_type)
-            with inst_id
-            {
-                instance_destroy()
-            }
+            show_debug_message("Deleting object with id = "+string(inst_id))
+            instance_deactivate_object(inst_id)
             break;
         }
     }
