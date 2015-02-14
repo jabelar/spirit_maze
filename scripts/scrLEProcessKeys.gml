@@ -30,5 +30,12 @@ else // dialog is open
             scrLELoadLevel()
             global.dialog_open = false
         }
+        if keyboard_check_pressed(vk_delete)
+        {
+            ds_list_delete(level_list, item_num)
+            ini_open("Level.ini")
+            ini_write_string("Level List", "0", ds_list_write(level_list))
+            ini_close()
+        }
     }
 }
