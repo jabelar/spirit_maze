@@ -19,11 +19,11 @@ else
     var obj_id = -1
     var obj_x = 0
     var obj_y = 0
+    
+    scrLEClear()
     if queue_size > 0
     {
         show_debug_message("Level queue size = "+string(queue_size))
-
-        scrLEClear()
         
         for (var i=1; i < queue_size; i++)
         {
