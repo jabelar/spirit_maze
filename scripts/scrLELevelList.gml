@@ -9,3 +9,4 @@ ini_close()
 show_debug_message("Level list has size = "+string(ds_list_size(level_list)))
 
 display_level_list = true
+item_num = 0

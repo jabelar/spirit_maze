@@ -60,3 +60,51 @@ if display_level_list
         }
     }
 }
+
+if waiting_for_save_confirm
+{
+    draw_set_color(c_black)
+    draw_rectangle(center_view_x - 1500, center_view_y, center_view_x + 1500, center_view_y + 200, false)
+    draw_set_color(c_yellow)
+    draw_set_halign(fa_center)
+    draw_text(center_view_x, center_view_y, "File with this name exists.  Overwrite?")
+    if keyboard_check_pressed(vk_enter) or keyboard_check_pressed(ord('Y'))
+    {
+        ini_open("Level.ini")
+        ini_write_string("Level List", "0", ds_list_write(level_list))
+        // update level
+        ini_write_string(level_name, "0", ds_queue_write(level_queue))
+        ini_close()
+        
+        show_debug_message("Saving level")
+        
+        ds_queue_destroy(level_queue)
+        waiting_for_save_confirm = false
+        global.dialog_open = false
+        
+        // show notification that save happened
+        notification_string = "Saving..."
+        notification_timer = room_speed * 3
+    }
+    if keyboard_check_pressed(ord('N'))
+    {
+        ds_queue_destroy(level_queue)
+        waiting_for_save_confirm = false
+        global.dialog_open = false
+        // show notification that save canceled
+        notification_string = "Save canceled"
+        notification_timer = room_speed * 3
+    }
+}
+
+// show notifications
+if notification_timer >= 0
+{
+    var notification_width = string_width(notification_string)+60
+    draw_set_color(c_black)
+    draw_rectangle(center_view_x - notification_width/2, center_view_y+1200, center_view_x + notification_width/2, center_view_y + 1400, false)
+    draw_set_color(c_silver)
+    draw_set_halign(fa_center)
+    draw_text(center_view_x, center_view_y+1200, notification_string)
+}
+

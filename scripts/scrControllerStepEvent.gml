@@ -18,6 +18,8 @@ if keyboard_check_pressed(vk_escape)
         global.dialog_open = false
         objLECursor.waiting_for_name = false
         objLECursor.display_level_list = false
+        objLECursor.waiting_for_save_confirm = false
+        objLECursor.waiting_for_load_confirm = false
     }
     else
     {
