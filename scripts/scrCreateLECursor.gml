@@ -11,3 +11,4 @@ name_input_id = -1
 
 level_list = ds_list_create()
 display_level_list = false
+item_num = 0
