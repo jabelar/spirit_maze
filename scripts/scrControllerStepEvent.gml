@@ -11,4 +11,4 @@ switch room
     case roomGame: scrStepGame(); scrCheckBroadcastAlarm(); break;
 }
 
-if keyboard_check_direct(vk_escape) then game_end()
+if keyboard_check_direct(vk_escape) and not global.dialog_open then game_end()

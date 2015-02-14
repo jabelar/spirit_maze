@@ -8,3 +8,5 @@ gamepad_set_axis_deadzone(1, 0.2);
 gamepad_set_axis_deadzone(2, 0.2);
 
 show_debug_message("Controller create event finished")
+
+global.dialog_open = false

@@ -1,5 +1,7 @@
 /// scrLELevelList()
 
+global.dialog_open = true
+
 ini_open("Level.ini")
 ds_list_read(level_list, ini_read_string("Level List", "0", ""))
 ini_close()
