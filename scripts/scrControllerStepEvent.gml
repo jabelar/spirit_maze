@@ -11,17 +11,21 @@ switch room
     case roomGame: scrStepGame(); scrCheckBroadcastAlarm(); break;
 }
 
+
+if global.notification_timer >= 0 then global.notification_timer--
+
 if keyboard_check_pressed(vk_escape)
 {
+    // exit any dialog if open
     if global.dialog_open 
     {
         global.dialog_open = false
-        objLECursor.waiting_for_name = false
-        objLECursor.display_level_list = false
-        objLECursor.waiting_for_save_confirm = false
-        objLECursor.waiting_for_load_confirm = false
+        global.waiting_for_name = false
+        global.display_level_list = false
+        global.waiting_for_save_confirm = false
+        global.waiting_for_load_confirm = false
     }
-    else
+    else // exit game
     {
         game_end()
     }

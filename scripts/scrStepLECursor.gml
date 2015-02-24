@@ -5,8 +5,6 @@ scrLEProcessKeys()
 x = (mouse_x div 256) * 256
 y = (mouse_y div 256) * 256
 
-if notification_timer >= 0 then notification_timer--
-
 var inst_id = -1 ;
 
 if mouse_check_button_pressed(mb_left) and sprite_index == sprPlayer and y >= 256
@@ -114,4 +112,3 @@ if mouse_check_button_pressed(mb_right)
         }
     }
 }
-

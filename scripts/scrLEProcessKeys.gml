@@ -12,29 +12,29 @@ if not global.dialog_open
 }
 else // dialog is open
 {
-    if waiting_for_name
+    if global.waiting_for_name
     {
         if keyboard_check_pressed(vk_enter)
         {
-            level_name = string_upper(keyboard_string)
-            waiting_for_name = false
+            global.level_name = string_upper(keyboard_string)
+            global.waiting_for_name = false
             global.dialog_open = false
         }
     }
-    if display_level_list
+    if global.display_level_list
     {
         if keyboard_check_pressed(vk_enter)
         {
-            level_name = ds_list_find_value(level_list, item_num)
-            display_level_list = false
+            global.level_name = ds_list_find_value(global.level_list, global.item_num)
+            global.display_level_list = false
             scrLELoadLevel()
             global.dialog_open = false
         }
         if keyboard_check_pressed(vk_delete)
         {
-            ds_list_delete(level_list, item_num)
+            ds_list_delete(global.level_list, global.item_num)
             ini_open("Level.ini")
-            ini_write_string("Level List", "0", ds_list_write(level_list))
+            ini_write_string("Level List", "0", ds_list_write(global.level_list))
             ini_close()
         }
     }

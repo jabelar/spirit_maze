@@ -1,9 +1,9 @@
 /// scrLoadLevel()
 
-var level_queue = ds_queue_create()
+global.level_queue = ds_queue_create()
 
 ini_open("Level.ini")
-var ini_string = ini_read_string(level_name, "0", "")
+var ini_string = ini_read_string(global.level_name, "0", "")
 ini_close()
 
 if ini_string == ""
@@ -13,9 +13,9 @@ if ini_string == ""
 else
 {
     show_debug_message("Loading level")
-    ds_queue_read(level_queue, ini_string)
+    ds_queue_read(global.level_queue, ini_string)
     
-    var queue_size = ds_queue_size(level_queue)
+    var queue_size = ds_queue_size(global.level_queue)
     var obj_id = -1
     var obj_x = 0
     var obj_y = 0
@@ -27,11 +27,11 @@ else
         
         for (var i=1; i < queue_size; i++)
         {
-            obj_id = ds_queue_dequeue(level_queue)
+            obj_id = ds_queue_dequeue(global.level_queue)
             i++
-            obj_x = ds_queue_dequeue(level_queue)
+            obj_x = ds_queue_dequeue(global.level_queue)
             i++
-            obj_y = ds_queue_dequeue(level_queue)
+            obj_y = ds_queue_dequeue(global.level_queue)
             show_debug_message("Creating object "+string(obj_id)+" at x = "+string(obj_x)+" and y = "+string(obj_y))
             instance_create(obj_x, obj_y, obj_id)
         }       
@@ -40,4 +40,4 @@ else
 
 // don't forget to clear undo stack and destroy load queue
 ds_stack_clear(undo_stack)
-ds_queue_destroy(level_queue)
+ds_queue_destroy(global.level_queue)

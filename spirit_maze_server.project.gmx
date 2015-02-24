@@ -37,7 +37,8 @@
     <scripts name="Event Processing">
       <scripts name="Create Event">
         <script>scripts\scrControllerCreateEvent.gml</script>
-        <script>scripts\scrCreateLECursor.gml</script>
+        <script>scripts\scrLECursorCreateEvent.gml</script>
+        <script>scripts\scrDialogCreateEvent.gml</script>
       </scripts>
       <script>scripts\scrControllerRoomStartEvent.gml</script>
       <script>scripts\scrNetworkingEvent.gml</script>
@@ -52,6 +53,7 @@
         <script>scripts\scrStepGame.gml</script>
         <script>scripts\scrStepRoomMainMenu.gml</script>
         <script>scripts\scrCheckBroadcastAlarm.gml</script>
+        <script>scripts\scrDialogStepEvent.gml</script>
       </scripts>
       <scripts name="Draw Event">
         <script>scripts\scrControllerDrawEvent.gml</script>
@@ -61,6 +63,8 @@
         <script>scripts\scrDrawFriends.gml</script>
         <script>scripts\scrDrawSettings.gml</script>
         <script>scripts\scrLECursorDrawEvent.gml</script>
+        <script>scripts\scrLEDrawDialogs.gml</script>
+        <script>scripts\scrDialogDrawEvent.gml</script>
       </scripts>
       <script>scripts\scrControllerEscape.gml</script>
       <scripts name="Key Press">
@@ -89,6 +93,7 @@
         <script>scripts\scrConstants.gml</script>
         <script>scripts\scrNetworkingConstants.gml</script>
         <script>scripts\scrGameConstants.gml</script>
+        <script>scripts\scrInitializeDialogs.gml</script>
       </scripts>
       <scripts name="Setters">
         <script>scripts\scrSetScore.gml</script>
@@ -152,6 +157,7 @@
   </fonts>
   <objects name="objects">
     <object>objects\objController</object>
+    <object>objects\objDialogController</object>
     <object>objects\objPlayer</object>
     <object>objects\objObstacle</object>
     <object>objects\objFlag</object>

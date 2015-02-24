@@ -20,5 +20,4 @@ draw_set_color(c_yellow)
 draw_set_halign(fa_center)
 draw_set_valign(fa_top)
 var layer = view_xview[view_current]/view_wview[view_current]+1
-draw_text(view_xview[view_current]+view_wview[view_current]/2, 10, objLECursor.level_name+", LAYER "+string(layer))
-
+draw_text(view_xview[view_current]+view_wview[view_current]/2, 10, global.level_name+", LAYER "+string(layer))
